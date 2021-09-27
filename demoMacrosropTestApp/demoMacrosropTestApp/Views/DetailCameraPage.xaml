@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="demoMacrosropTestApp.Views.DetailCameraPage"
+             xmlns:crl="clr-namespace:demoMacrosropTestApp.Controls.StateContainer"
+             xmlns:local="clr-namespace:demoMacrosropTestApp.ViewModels"
+             xmlns:model="clr-namespace:demoMacrosropTestApp.Common;assembly=demoMacrosropTestApp.Common"
+             Title="{Binding Name}">
+    <crl:StateContainer State="{Binding States}" x:DataType="local:DetailCameraPage">
+        <crl:StateCondition State="Loading">
+            <ActivityIndicator IsRunning="True" Color="{DynamicResource Primary}" />
+        </crl:StateCondition>
+
+        <crl:StateCondition State="Normal">
+            <ScrollView>
+                <StackLayout Spacing="20" Padding="15">
+                    <Label Text="Name:" FontSize="Medium" />
+                    <Label Text="{Binding Name}" FontSize="Small"/>
+                    <Label Text="DeviceInfo:" FontSize="Medium" />
+                    <Label Text="{Binding DeviceInfo}" FontSize="Small"/>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox IsEnabled="True" IsChecked="{Binding IsSoundOn}" />
+                        <Label Text="IsSoundOn" FontSize="Medium" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox IsEnabled="True" IsChecked="{Binding IsDisabled}" />
+                        <Label Text="IsDisabled" FontSize="Medium" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox IsEnabled="True" IsChecked="{Binding IsArchivingEnabled}" />
+                        <Label Text="IsArchivingEnabled" FontSize="Medium" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox IsEnabled="True" IsChecked="{Binding AllowedRealtime}" />
+                        <Label Text="AllowedRealtime" FontSize="Medium" />
+                    </StackLayout>
+                    <BoxView   VerticalOptions="Center"
+                   HorizontalOptions="FillAndExpand"
+                   HeightRequest="1"                            
+                   Color="#5b5d68"></BoxView>
+                    <Label Text="Server Name:" FontSize="Medium" />
+                    <Label Text="{Binding ServerName}" FontSize="Small"/>
+                    <Label Text="Server Url:" FontSize="Medium" />
+                    <Label Text="{Binding ServerUrl}" FontSize="Small"/>
+                    <Label Text="Server Primary Ip:" FontSize="Medium" />
+                    <Label Text="{Binding ServerPrimaryIp}" FontSize="Small"/>
+                    <Label Text="Server Primary Port:" FontSize="Medium" />
+                    <Label Text="{Binding ServerPrimaryPort}" FontSize="Small"/>
+                </StackLayout>
+            </ScrollView>
+        </crl:StateCondition>
+    </crl:StateContainer>
+</ContentPage>
