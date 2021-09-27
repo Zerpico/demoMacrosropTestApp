@@ -19,19 +19,19 @@
                     <Label Text="DeviceInfo:" FontSize="Medium" />
                     <Label Text="{Binding DeviceInfo}" FontSize="Small"/>
                     <StackLayout Orientation="Horizontal">
-                        <CheckBox IsEnabled="True" IsChecked="{Binding IsSoundOn}" />
+                        <CheckBox IsEnabled="False" IsChecked="{Binding IsSoundOn}" />
                         <Label Text="IsSoundOn" FontSize="Medium" />
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <CheckBox IsEnabled="True" IsChecked="{Binding IsDisabled}" />
+                        <CheckBox IsEnabled="False" IsChecked="{Binding IsDisabled}" />
                         <Label Text="IsDisabled" FontSize="Medium" />
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <CheckBox IsEnabled="True" IsChecked="{Binding IsArchivingEnabled}" />
+                        <CheckBox IsEnabled="False" IsChecked="{Binding IsArchivingEnabled}" />
                         <Label Text="IsArchivingEnabled" FontSize="Medium" />
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <CheckBox IsEnabled="True" IsChecked="{Binding AllowedRealtime}" />
+                        <CheckBox IsEnabled="False" IsChecked="{Binding AllowedRealtime}" />
                         <Label Text="AllowedRealtime" FontSize="Medium" />
                     </StackLayout>
                     <BoxView   VerticalOptions="Center"
